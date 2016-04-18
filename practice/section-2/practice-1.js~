@@ -1,0 +1,24 @@
+function count_same_elements(collection) {
+  
+  var new_collection = [];
+  var counts = 1;
+  var keys = "";
+
+  for(var i = 0; i < collection.length; i++){
+    for(var j = i + 1; j < collection.length - 1; j++){
+      if(collection[i] != collection[j]){
+	keys = collection[i];
+        i = j;
+      else{
+        counts++;
+      }
+     }
+    var new_object = {};
+    new_object.key = keys;
+    new_object.count = counts;
+    new_collection.push(new_object);
+    counts = 1;
+    }
+   }
+   return new_collection;
+}
